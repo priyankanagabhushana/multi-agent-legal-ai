@@ -1,0 +1,10 @@
+.venv/
+.git/
+.kilo/
+__pycache__/
+*.pyc
+.cache/
+.env
+DEEPSEEK_API_KEY
+PROPOSAL.md
+.streamlit/secrets.toml

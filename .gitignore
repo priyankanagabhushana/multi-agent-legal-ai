@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.egg-info/
+dist/
+build/
+*.pyo
+*.pyc
+
+# Environment & Secrets
+.env
+DEEPSEEK_API_KEY
+OPENAI_API_KEY
+
+# Sensitive documents
+PROPOSAL.md
+
+# Cache & temp
+.cache/
+*.log
+/tmp/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Streamlit
+.streamlit/secrets.toml
