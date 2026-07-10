@@ -93,15 +93,17 @@ PYTHONPATH=. python -m sovereignlex.eval_benchmark --cases 5
 
 ## Deployment
 
-### Streamlit Community Cloud (Free — Recommended)
-1. Push to GitHub (already done)
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Click "New app" → select repo `priyankanagabhushana/multi-agent-legal-ai`
-4. Main file path: `app.py`
-5. Set secret: `DEEPSEEK_API_KEY` = your key (optional, falls back to Ollama)
-6. Deploy — free, no credit card needed
+### Live Demo (GCP Cloud Run)
+**https://sovereignlex-767269106186.europe-west4.run.app**
 
-### GCP Cloud Run (Near-Free)
+### Streamlit Community Cloud (Free Alternative)
+1. Go to [share.streamlit.io](https://share.streamlit.io)
+2. Click "New app" → select repo `priyankanagabhushana/multi-agent-legal-ai`
+3. Main file path: `app.py`
+4. Set secret: `DEEPSEEK_API_KEY` = your key (optional, falls back to Ollama)
+5. Deploy
+
+### GCP Cloud Run (Custom Deploy)
 ```bash
 gcloud builds submit --tag gcr.io/YOUR_PROJECT/sovereignlex
 gcloud run deploy sovereignlex \
@@ -110,7 +112,6 @@ gcloud run deploy sovereignlex \
   --set-env-vars DEEPSEEK_API_KEY=sk-... \
   --allow-unauthenticated
 ```
-First 2M requests/month free — negligible costs for demo use.
 
 ## Example Cases
 
