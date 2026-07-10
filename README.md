@@ -85,11 +85,32 @@ PYTHONPATH=. python -m sovereignlex.cli "Your claim text here..."
 PYTHONPATH=. python -m sovereignlex.cli -e 0 -o result.json
 
 # Streamlit UI (auto-detects provider from env or sidebar selection)
-PYTHONPATH=. streamlit run sovereignlex/app.py
+PYTHONPATH=. streamlit run app.py
 
 # Evaluation harness
 PYTHONPATH=. python -m sovereignlex.eval_benchmark --cases 5
 ```
+
+## Deployment
+
+### Streamlit Community Cloud (Free — Recommended)
+1. Push to GitHub (already done)
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Click "New app" → select repo `priyankanagabhushana/multi-agent-legal-ai`
+4. Main file path: `app.py`
+5. Set secret: `DEEPSEEK_API_KEY` = your key (optional, falls back to Ollama)
+6. Deploy — free, no credit card needed
+
+### GCP Cloud Run (Near-Free)
+```bash
+gcloud builds submit --tag gcr.io/YOUR_PROJECT/sovereignlex
+gcloud run deploy sovereignlex \
+  --image gcr.io/YOUR_PROJECT/sovereignlex \
+  --port 8080 \
+  --set-env-vars DEEPSEEK_API_KEY=sk-... \
+  --allow-unauthenticated
+```
+First 2M requests/month free — negligible costs for demo use.
 
 ## Example Cases
 
