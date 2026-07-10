@@ -16,6 +16,7 @@ OPENAI_API_KEY
 
 # Sensitive documents
 PROPOSAL.md
+EXPLANATION.md
 
 # Cache & temp
 .cache/
